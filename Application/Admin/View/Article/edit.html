@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改文章 </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/style.css" />
+    <link rel="stylesheet" href="__PUBLIC__/kindeditor/themes/default/default.css" />
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/jS/bootstrap.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/common.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/area.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="__PUBLIC__/kindeditor/lang/zh_CN.js"></script>
+    <!--富文本编辑器-->
+    <script>
+        var editor;
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                cssPath : '__PUBLIC__/kindeditor/plugins/code/prettify.css',
+                uploadJson : '__PUBLIC__/kindeditor/driver/upload_json.php',
+                fileManagerJson : '__PUBLIC__/kindeditor/driver/file_manager_json.php',
+                allowFileManager : true
+            });
+        });
+    </script>
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+
+        form {
+            margin: 0;
+        }
+        textarea {
+            display: block;
+        }
+
+        .repp{
+        	color:red;
+        }
+    </style>
+</head>
+<body>
+<!-- 添加文章form表单 -->
+	<form action="{:U('')}" method="post" class="definewidth m20">
+		<table class="table table-bordered table-hover definewidth m10">
+	   	 	<tr>
+		        <td width="10%" class="tableleft">文章标题</td>
+		        <td>
+		        	<input type="text" name="title" value="{$info.title}"/>
+		        	<span class="repp">*</span>
+		        </td>
+		    </tr>
+		    <tr>
+		        <td class="tableleft">文章类型</td>
+		        <td>
+		        	<select name="kind" class="form-control">
+                        <volist name="_kind_list" id="vo">
+                            <if condition="$info['kind'] eq $vo['id']">
+                                <option value="{$vo.id}" selected="selected">{$vo.name}</option>
+                                <else />
+                                <option value="{$vo.id}">{$vo.name}</option>
+                            </if>
+                        </volist>
+				    </select>
+		        	<span class="repp">*</span>
+		        </td>
+		    </tr>
+		    <tr>
+		        <td class="tableleft">文章内容</td>
+		        <td><textarea name="content" style="width:800px;height:350px;visibility:hidden;">{$info.content}</textarea></td>
+		    </tr>
+		    <tr>
+		        <td class="tableleft"></td>
+		        <td>
+                    <input type="hidden" name="id" value="{:I('id')}">
+		            <button type="submit" class="btn btn-primary" type="button">提交修改</button> &nbsp;&nbsp;
+		        </td>
+		    </tr>
+		</table>
+	</form>
+</body>
+</html>
+<script>
+    $(function () {       
+		$('#backid').click(function(){
+				window.location.href="index.html";
+		 });
+
+    });
+</script>

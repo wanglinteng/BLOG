@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>MR.WLT-管理平台</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/adminLogin.css" />
+	<script type="text/javascript" src="__PUBLIC__/admin/js/jquery-latest.min.js"></script>
+	<script src="__PUBLIC__/admin/js/modernizr-latest.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/admin/js/placeholder.js"></script>
+</head>
+<body>
+	<form id="slick-login" action="{:U('check_login')}" method="post">
+		<label for="username">username</label><input type="text" name="username" class="placeholder" placeholder="请输入用户名">
+        <label for="password">password</label><input type="password" name="password" class="placeholder" placeholder="请输入密码">
+        <label for="code">verify</label><input type="text" name="code" class="placeholder" placeholder="请输入验证码">
+		<img src={:U('verify')}  id="verify" style="width: 220px; height: 40px; margin-top: 8px; padding: 0;" onclick="this.src='{:U(\'verify\')}'+'#random='+Math.random()" >
+        <input type="submit" value="登录">
+		<span style="color:red;text-align:center;width:220px;display:block;margin-top:5px;">{$ErrorInfo}</span>
+	</form>
+</body>
+</html>

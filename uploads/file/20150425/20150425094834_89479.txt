@@ -1,0 +1,24 @@
+1.安装wamp软件
+
+2.mysql控制台修改mysql密码
+  修改方式：
+	  1.输入 use mysql
+	  2.输入 update user set password =PASSWORD('密码') where user='root';//注意大小写和分号
+          3.输入 flush privileges
+	  4.输入 quit
+
+3.修改phpmyadmin的登陆方式：config.inc.php中 $cfg['Servers'][$i]['auth_type']='http'
+	
+4.配置rewrite规则:
+		1.httpd.conf配置文件中加载了mod_rewrite.so模块 
+		2.AllowOverride None 将None改为 All 
+		3.把下面的内容保存为.htaccess文件放到应用入口文件的同级目录下 
+		/*******.htaccess文件***********/
+		<IfModule mod_rewrite.c>
+ 		  RewriteEngine on
+ 		  RewriteCond %{REQUEST_FILENAME} !-d
+ 		  RewriteCond %{REQUEST_FILENAME} !-f
+ 		  RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+		</IfModule>
+
+

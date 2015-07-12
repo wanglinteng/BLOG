@@ -1,0 +1,25 @@
+<extend name="Index:base" />
+
+<block name="content">
+    <script language="javascript" src="__PUBLIC__/home/js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        var view = {$info.id};
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url:"{:U('census')}",
+            data:{"id":view},
+            async: false,
+            dataType:'json'
+        });
+    </script>
+
+    <div class="content">
+        <article>
+            <h1>{$info.title}</h1>
+            <div>{$info.content|htmlspecialchars_decode}</div>
+        </article>
+    </div>
+</block>
+
+

@@ -1,0 +1,89 @@
+
+<!DOCTYPE HTML>
+<html>
+    <!--头部信息模块-->
+    <block name="head">
+        <head>
+            <meta name="baidu-site-verification" content="IdKF4Vl9R2" />
+            <title>WangLinTeng 欢迎您！</title>
+            <link href="__PUBLIC__/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
+        </head>
+    </block>
+    <body>
+        <!--头部模块-->
+        <block name="header">
+            <div class="header">
+                <div class="wrap">
+                    <div class="logo"><a href="{:U('index')}"><img src="__PUBLIC__/home/images/logo.png" alt="MR.WLT" /></a></div>
+                    <div class="headerbox">
+                        <div class="login">
+                            <ul>
+                                <li>{$now|date="Y年m月d日",###}</li>
+                            </ul>
+                        </div>
+                        <div class="search">
+                            <form action="{:U('index')}"  method="post">
+                                <if condition="I('title') eq ''">
+                                    <input type="text" name="title" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
+                                    <else />
+                                    <input type="text" name="title" value="{:I('title')}" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}">
+                                </if>
+                                <input type="submit" value="Go" />
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </block>
+        <div class="wrap">
+            <div class="main">
+                <!--导航栏-->
+                <block name="nav">
+                    <div class="nav">
+                        <ul>
+                            <if condition="I('kind') eq null">
+                                <li class="active"><a href="{:U('index')}">首页</a></li>
+                                <volist name="nav_list" id="nav_vo">
+                                    <li><a href="{:U('index',array('kind'=>$nav_vo['id']))}">{$nav_vo.name}</a></li>
+                                </volist>
+                                <else />
+                                <li><a href="{:U('index')}">首页</a></li>
+                                <volist name="nav_list" id="nav_vo">
+                                    <if condition="I('kind') eq $nav_vo['id']">
+                                        <li class="active"><a href="{:U('index',array('kind'=>$nav_vo['id']))}">{$nav_vo.name}</a></li>
+                                        <else />
+                                        <li><a href="{:U('index',array('kind'=>$nav_vo['id']))}">{$nav_vo.name}</a></li>
+                                    </if>
+                                </volist>
+                            </if>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </block>
+                <!--内容模块-->
+                <block name="content"></block>
+                <!--左侧边栏-->
+                <block name="left">
+                    <div class="sidebar">
+                        <div class="recent">
+                            <h3>最新文章</h3>
+                            <ul>
+                                <volist name="right" id="vo">
+                                    <li><a href="{:U('detail',array('id'=>$vo['id'],'kind'=>I('kind')))}">{$vo.title}</a></li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </block>
+            </div>
+            <!--底部模块-->
+            <block name="foot">
+                <div class="f-menu">
+                    <div class="copy">备案号：辽ICP备15003945号　POWER BY <a href="http://linteng.wang"> MR.WLT </a></div>
+                </div>
+            </block>
+        </div>
+    </body>
+</html>

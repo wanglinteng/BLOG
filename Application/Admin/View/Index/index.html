@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>MR.WLT管理平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="__PUBLIC__/admin/assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/admin/assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/admin/assets/css/main-min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="header">
+    <div class="dl-title">
+        <a href="{:U('Home/index/index')}" target="_blank">
+            <img src="__PUBLIC__/admin/images/logo.png" style="height: 36px;">
+        </a>
+    </div>
+    <div class="dl-log">欢迎您!
+        <span class="dl-log-user">
+            管理员:{$_SESSION['username']}
+        </span>
+        <a href="{:U('Admin/Login/logout')}" title="退出系统" class="dl-log-quit">[退出]</a>
+    </div>
+</div>
+<div class="content">
+    <div class="dl-main-nav">
+        <div class="dl-inform"><div class="dl-inform-title"><s class="dl-inform-icon dl-up"></s></div></div>
+        <ul id="J_Nav"  class="nav-list ks-clear">
+            <foreach name="_main" item="vo">
+                <li class="nav-item dl-selected"><div class="nav-item-inner nav-order">{$vo.name}</div></li>
+            </foreach>
+        </ul>
+    </div>
+    <ul id="J_NavContent" class="dl-tab-conten">
+    </ul>
+</div>
+</body>
+    <script type="text/javascript" src="__PUBLIC__/admin/assets/js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/assets/js/bui-min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/assets/js/common/main-min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/assets/js/config-min.js"></script>
+    <script>
+        BUI.use('common/main',function(){
+
+            var config = [
+                <foreach name="_main" item="vo">
+                    {id:'{$vo.id}',menu:[
+                        {text:'{$vo.name}',items:[
+                        <foreach name="_second" item="sub">
+                            <if condition="$sub['pid'] eq $vo['id']">
+                                {id:'{$sub.id}',text:'{$sub.name}',href:"{:U($sub['href'])}"},
+                            </if>
+                        </foreach>
+                        ]}
+                    ]},
+                </foreach>
+            ];
+            new PageUtil.MainPage({
+                modulesConfig : config
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户日志</title>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/bootstrap-responsive.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/admin/css/style.css" />
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/jquery.sorted.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/bootstrap.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/ckform.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/admin/js/common.js"></script>
+
+    <style type="text/css">
+        body {
+            padding-bottom: 40px;
+        }
+        .sidebar-nav {
+            padding: 9px 0;
+        }
+
+        @media (max-width: 980px) {
+            /* Enable use of floated navbar text */
+            .navbar-text.pull-right {
+                float: none;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+<table class="table table-bordered table-hover definewidth m10">
+    <thead>
+        <tr>
+            <th>日志编号</th>
+            <th>用户名</th>
+            <th>登陆时间</th>
+            <th>登陆IP</th>
+        </tr>
+    </thead>
+    <notempty name="list">
+
+        <volist name="list" id="vo">
+            <tr>
+                <td>{$vo.id}</td>
+                <td>{$vo.uid|get_name}</td>
+                <td>{$vo.land_time|date="Y-m-d H:i:s",###}</td>
+                <td><a href="http://ip138.com/ips138.asp?ip={$vo.land_ip|long2ip}">{$vo.land_ip|long2ip}</a></td>
+            </tr>
+        </volist>
+            <tr>
+                <td colspan="12" style="text-align:center">{$page}</td>
+            </tr>
+        <else/>
+        <td colspan="12" style="text-align:center">暂时还没有记录!</td>
+    </notempty>
+</table>
+</body>
+</html>

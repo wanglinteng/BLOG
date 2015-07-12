@@ -1,0 +1,16 @@
+<extend name="Index:base" />
+
+<block name="content">
+    <div class="content">
+        <volist name="list" id="vo">
+            <article>
+                <h1>{$vo.title}</h1>
+                <div>{$vo.content|num_get_sort}</div>
+                <br>
+                <a href="{:U('detail',array('id'=>$vo['id'],'kind'=>I('kind')))}">Read more...</a>
+            </article>
+        </volist>
+    </div>
+</block>
+
+

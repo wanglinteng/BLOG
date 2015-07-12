@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Bootstrap 101 Template</title>
+
+		<!-- Bootstrap -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			.row{
+				width:960px;
+				height:800px;
+				margin:0px auto;
+			}
+			.col-md-3{
+				width:25%;
+				height:800px;
+			}
+			.col-md-9{
+				width:75%;
+				height:800px;
+				/*background:blue;*/
+			}
+			#headpic{
+				width:80px;
+				height:80px;
+				margin-left:30%;
+				margin-top:30px;
+			}
+			.right-resume-top{
+				width:100%;
+				height:40px;
+				margin-top:80px;
+			}
+			.message{
+				margin-top:30px;
+			}
+			.username{
+				width:100%;
+				height:30px;
+				text-align:center;
+				font-size:18px;
+			}
+			#resuse-table{
+				margin-top:10px;
+			}
+			span{
+				font-size:15px;
+				color:red;
+			}
+			#umessage{
+				background:#eee;
+			}
+			#discript{
+				font-size:10px;
+				color:green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-3">
+				<div><a href=""><img src="./1.jpg" alt="..." class="img-circle" id="headpic"></a></div>
+				<div class="username"><b>姓名</b></div>
+				<div style="width:100%;height:3px;background:#ccc
+				;"></div>
+				<ul class="nav nav-pills nav-stacked" role="tablist">
+					<li role="presentation" class="active"><a href="#">个人简历</a></li>
+					<li role="presentation"><a href="#">收藏记录</a></li>
+					<li role="presentation"><a href="#">查看应聘信息</a></li>
+					<li role="presentation"><a href="#">设置</a></li>
+				</ul>
+			</div>
+			<div class="col-md-9">
+				<div class="right-resume-top"><h2>在线简历</h2></div>
+				<ul class="nav nav-tabs" role="tablist" id="resuse-table">
+					<li role="presentation" class="active"><a href="#">添加简历</a></li>
+					<li role="presentation"><a href="#">查看简历</a></li>
+				</ul>
+				<form class="form-horizontal" role="form">
+					<div class="alert alert-info" role="alert" id="umessage">基本信息</div>
+  					<div class="form-group">
+						<label for="inputEmail3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;姓&nbsp;&nbsp;&nbsp;&nbsp;名</label>
+						<div class="col-sm-6">
+							<input type="name" class="form-control" placeholder="请输入真实姓名">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;龄</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" placeholder="请输入当前年龄">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;手&nbsp;&nbsp;&nbsp;&nbsp;机</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" placeholder="请输入正确的手机号">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
+						<div class="col-sm-6">
+							<input type="password" class="form-control" placeholder="请输入正确邮箱名">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;住&nbsp;&nbsp;&nbsp;&nbsp;址</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" placeholder="请输入现在的住址">
+						</div>
+					</div>
+					<!-- <div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">Sign in</button>
+						</div>
+					</div> -->
+					<div class="alert alert-info" role="alert" id="umessage">个人信息</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;婚姻状况</label>
+						<div class="col-sm-4">
+							<select class="form-control">
+								<option>----请选择婚姻状态----</option>
+								<option>未婚</option>
+								<option>已婚</option>
+								<option>近期有结婚打算</option>
+							</select>
+						</div>
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;最高学历</label>
+						<div class="col-sm-4">
+							<select class="form-control">
+								<option>----请选择学历----</option>
+								<option>高中以下</option>
+								<option>高中</option>
+								<option>大专</option>
+								<option>本科</option>
+								<option>研究生</option>
+								<option>博士</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;子女状态</label>
+						<div class="col-sm-4">
+							<input type="password" class="form-control" placeholder="如果未婚请填无">
+						</div>
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;毕业院校</label>
+						<div class="col-sm-4">
+							<input type="password" class="form-control" placeholder="请输入毕业学校名">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;原&nbsp;&nbsp;&nbsp;&nbsp;籍</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" placeholder="请输入您的户籍所在地">
+						</div>
+					</div>
+					<div class="alert alert-info" role="alert" id="umessage">工作经验</div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;工作经历</label>
+						<textarea class="form-control" rows="8" style="resize:none;"></textarea>
+					</div>
+					<div class="alert alert-info" role="alert" id="umessage">简历隐私状态&nbsp;&nbsp;<span id="discript">以下填写在发送简历时不会发送到企业</span></div>
+					<div class="form-group">
+						<label for="inputPassword3" class="col-sm-2 control-label"><span>*</span>&nbsp;&nbsp;工作状态</label>
+						<div class="col-sm-4">
+							<select class="form-control">
+								<option>----请选择人数----</option>
+								<option>在职</option>
+								<option>闲职</option>
+								<option>目前在职，近期有离职倾向</option>
+							</select>
+						</div>
+					</div>
+					<button type="button" class="btn btn-primary btn-lg btn-block">保存并预览</button>
+				</form>
+			</div>
+		</div>
+	</body>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+</html>

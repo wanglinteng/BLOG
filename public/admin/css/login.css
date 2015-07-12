@@ -1,0 +1,93 @@
+.main{
+	margin:0px auto;
+	border:1px solid black;
+	width:1000px;
+	height:400px;
+	background:#EAFFFD;
+}
+.main-form{
+	margin-top:100px;
+	width:600px;
+	height:800px;
+	float:left;
+}
+.co{
+	height:50px;
+	width:760px;
+	float:left;
+	margin-left:200px;
+	/*margin-left:50%;*/
+}
+.title{
+	width:70px;
+	height:50px;
+	line-height:50px;
+	font-size:15px;
+	/*display:block;*/
+	float:left;
+}
+.inputtext{
+	width:150px;
+	height:30px;
+	margin-top:6px;
+	margin-left:20px;
+	line-height:40px;
+	font-size:16px;
+	float:left;
+	border-radius:5px;
+
+}
+.login-btn{
+	margin-top:40px;
+	margin-left:340px;
+	width:100px;
+	height:40px;
+	background:red;
+	font-size:20px;
+	font-weight:bold;
+	/*box-shadow:1px 1px 1px #000;*/
+	/*-moz-box-shadow:1px 1px 1px #000;*/
+	border-radius:10px;
+	float:left;
+
+}
+.login-c{
+	width:239px;
+	height:220px;
+	border-left:1px dashed black;
+	float:left;
+	margin-top:100px;
+	margin-left:100px;
+}
+.message{
+	width:240px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	float:left;
+
+}
+.loginqq{
+	width:240px;
+}
+.qq{
+	height:80px;
+	width:80px;
+	margin-left:20px;
+/*	float:left;*/
+	background:orange;
+	float:left;
+}
+#sina{
+	float:left;
+	margin-left:40px;
+}
+.to-reg{
+	float:left;
+	width:240px;
+	height:80px;
+	line-height:80px;
+	text-align:center;
+	float:left;
+	padding-bottom:20px;
+}
